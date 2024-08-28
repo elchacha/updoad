@@ -1,0 +1,20 @@
+<template>
+    <div class="box fr-p-2w">
+        <table>
+            <tr>
+              <td class="title">{title}</td>
+              <td rowspan="2"><button
+                class="addButton fr-btn fr-icon-edit-fill fr-btn--icon-center fr-btn--primary fr-icon slds-float_right"
+                onclick={handleAdd}></button></td>
+            </tr>
+            <tr>
+              <td><p class={badgeCss}>{badgeTitle}</p></td>
+            </tr>
+          </table>
+        <div >
+            <template for:each={documentFiles} for:item="documentFile">
+                <div key={documentFile.Id}>{documentFile.Title}</div>
+            </template>
+        </div>
+    </div>
+</template>

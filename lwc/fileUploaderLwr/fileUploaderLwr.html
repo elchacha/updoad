@@ -1,0 +1,22 @@
+<template>
+    <lightning-modal-header label={description}></lightning-modal-header>
+    <lightning-modal-body  style="text-align:center;"> 
+        <div class="slds-m-around_medium">
+            <input type="file" 
+            accept=".xlsx, .xls, .csv, .png, .doc, .docx, .pdf"
+            name="Attachment" onchange={openfileUpload} multiple></input>
+        </div>
+        <template if:true={Loading}>
+            <lightning-spinner alternative-text="Loading" size="x-small"></lightning-spinner>
+        </template>
+        <c-responsive-datatable pk-field="Id" column-config={columnsList} 
+        row-data={dataTbl} 
+        onrowclick={handleRowClick}></c-responsive-datatable>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <template if:true={docSelected}>
+            <lightning-button label="Supprimer le fichier selectionner" onclick={removeDoc}></lightning-button>
+        </template>
+        <lightning-button label="Fermer" onclick={closeModal}></lightning-button>
+    </lightning-modal-footer>
+</template>

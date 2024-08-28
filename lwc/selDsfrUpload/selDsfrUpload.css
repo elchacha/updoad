@@ -1,0 +1,17 @@
+.box{
+    border: 1px solid blue;
+    width: 388px;
+    background-color: white;
+}
+
+.title{
+    font-family: 'Marianne';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+    
+.blue{
+    --sds-c-icon-color-foreground-default: blue;
+}
